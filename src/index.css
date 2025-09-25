@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-white dark:bg-gray-900 text-primary-800 dark:text-primary-200 transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .fabric-bg {
+    @apply bg-fabric-texture bg-fixed;
+    background-color: #fefefe;
+  }
+  
+  .dark .fabric-bg {
+    background-color: #1f2937;
+  }
+  
+  .section-padding {
+    @apply px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-24;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-700 to-accent-600 bg-clip-text text-transparent;
+  }
+  
+  .dark .gradient-text {
+    @apply bg-gradient-to-r from-primary-300 to-accent-400 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-accent-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-accent-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-primary-300 text-primary-700 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary-50 hover:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2;
+  }
+  
+  /* Enhanced scroll animations */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  
+  .reveal-up {
+    @apply transform translate-y-8 opacity-0 transition-all duration-700 ease-out;
+  }
+  
+  .reveal-up.revealed {
+    @apply translate-y-0 opacity-100;
+  }
+  
+  .reveal-fade {
+    @apply opacity-0 transition-opacity duration-1000 ease-out;
+  }
+  
+  .reveal-fade.revealed {
+    @apply opacity-100;
+  }
+  
+  .parallax-slow {
+    transform: translateY(var(--scroll-y, 0)) scale(1.05);
+    transition: transform 0.1s ease-out;
+  }
+  
+  /* Custom animations */
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) skewX(-12deg); }
+    100% { transform: translateX(200%) skewX(-12deg); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(2deg); }
+    66% { transform: translateY(-5px) rotate(-2deg); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+  
+  /* Scroll-based animations */
+  .scroll-element {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.25, 0.25, 0.75);
+  }
+  
+  .scroll-element.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Enhanced hover effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.25, 0.25, 0.25, 0.75);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Smooth transitions for better UX */
+  * {
+    transition-property: transform, opacity, background-color, border-color, color, fill, stroke;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
