@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Code, Shield, Music } from 'lucide-react'
+import profilePhoto from '/profile-photo.jpg'
 
 const About = () => {
   const containerVariants = {
@@ -57,7 +58,7 @@ const About = () => {
                 className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-white to-gray-50 border-4 border-white"
               >
                 <img
-                  src="/profile-photo.jpg"
+                  src={profilePhoto}
                   alt="Professional Photo - Harshit Behl"
                   className="w-full h-full object-cover"
                   onError={(e) => {

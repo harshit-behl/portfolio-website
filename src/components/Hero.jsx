@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 import GradualBlur from './GradualBlur'
+import profilePhoto from '/profile-photo.jpg'
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -45,7 +46,7 @@ const Hero = () => {
               <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/80 shadow-2xl">
                 {/* Your actual professional photo */}
                 <img
-                  src="/profile-photo.jpg"
+                  src={profilePhoto}
                   alt="Harshit Behl - Full Stack Developer"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
